@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    
+    <title>VortexType | Best Image & PDF Typing Tool | Hindi & English Speed Test</title>
+    <meta name="description" content="VortexType is a professional typing tool for SSC, Railway, and High Court exams. Practice typing from Images and PDFs with Hindi Unicode (Mangal) and English support.">
+    <meta name="keywords" content="Hindi Typing Test, English Speed Test, Image to Typing, PDF Typing, Remington Gail, Mangal Font, SSC CGL Typing, WPM Calculator, Online Typing Tutor">
+    <meta name="author" content="VortexType">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/4.1.1/tesseract.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: #0b0f1a; color: #e2e8f0; margin: 0; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .hidden-page { display: none !important; }
+        .word { padding: 2px 6px; border-radius: 6px; margin: 0 2px; display: inline-block; transition: 0.2s; }
+        .current-word { background: rgba(99, 102, 241, 0.4); border-bottom: 3px solid #6366f1; color: #fff; }
+        .correct { color: #10b981; }
+        .wrong { color: #ef4444; text-decoration: underline; text-decoration-style: wavy; }
+        .feature-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; }
+        .feature-active .feature-content { max-height: 2000px; }
+        .ad-placeholder { background: #161e2d; border: 1px dashed #334155; display: flex; align-items: center; justify-content: center; color: #475569; font-size: 11px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <section id="landingPage" class="min-h-screen">
+        <header class="p-6 flex justify-between items-center glass sticky top-0 z-50">
+            <h1 class="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">VortexType</h1>
+            <button onclick="shareWebsite()" class="bg-slate-800 px-4 py-2 rounded-xl text-xs font-bold transition hover:bg-slate-700">📲 SHARE</button>
+        </header>
+
+        <div class="container mx-auto px-6 py-12">
+            <div class="ad-placeholder w-full max-w-4xl h-24 mx-auto mb-12 rounded-xl">Landing Top Banner Ad</div>
+
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-7xl font-extrabold mb-6">Type Fast. <span class="text-indigo-500">Rank Higher.</span></h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10">Professional grade typing tool for Indian Government Exam Aspirants.</p>
+                <button onclick="goToTool()" class="bg-indigo-600 hover:bg-indigo-700 px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl transition-all hover:scale-105">
+                    Open Tool & Start Practice
+                </button>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-6">
+                
+                <div class="glass rounded-3xl border border-slate-800 feature-item" id="f1">
+                    <button onclick="toggleFeature('f1')" class="w-full p-8 text-left flex justify-between items-center group">
+                        <span class="text-xl md:text-2xl font-bold group-hover:text-indigo-400 transition">1. Precision Image OCR Typing Technology</span>
+                        <span class="text-2xl arrow">↓</span>
+                    </button>
+                    <div class="feature-content px-8 pb-8 text-slate-400 text-sm leading-relaxed">
+                        VortexType provides a state-of-the-art **Image-to-Text OCR** system designed to help you practice from any physical document. Traditional typing tools often limit you to generic text, but competitive exams like **SSC CGL, RRB NTPC, and State PSCs** require familiarity with diverse vocabularies. Our tool allows you to upload any image—whether it’s a photograph of a book, a legal document, or a handwritten note. Using advanced Tesseract AI, we extract every character with extreme precision, supporting complex English and **Hindi Unicode** scripts. By practicing with real-world document images, you build specialized muscle memory for the exact terminology you’ll face in high-stakes exams. This technology eliminates the need for manual transcription, letting you focus entirely on your **WPM speed** and accuracy. Whether you’re scanning a newspaper or an official gazette, VortexType ensures that your digital practice remains as realistic as possible, giving you an edge over other aspirants who rely on basic web paragraphs. (Keyword: Online Typing Test, Image OCR, Hindi Mangal Font, WPM Calculator).
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl border border-slate-800 feature-item" id="f2">
+                    <button onclick="toggleFeature('f2')" class="w-full p-8 text-left flex justify-between items-center group">
+                        <span class="text-xl md:text-2xl font-bold group-hover:text-indigo-400 transition">2. Seamless PDF Practice Environment</span>
+                        <span class="text-2xl arrow">↓</span>
+                    </button>
+                    <div class="feature-content px-8 pb-8 text-slate-400 text-sm leading-relaxed">
+                        Long-form typing proficiency is essential for modern clerical and administrative roles. VortexType’s **PDF Typing Mode** allows you to upload multi-page PDF documents and practice continuously. Many government exams, particularly for **Stenographer and Data Entry Operator** posts, utilize PDF-based source materials. Our platform parses your PDF files instantly, preserving the structure of the text to give you a distraction-free typing experience. This feature is particularly useful for practicing from official government circulars, legal judgments, or educational materials. Instead of toggling between a PDF viewer and a typing window, VortexType brings everything into one unified dashboard. This not only saves time but also significantly improves your concentration levels. For students targeting **High Court or Civil Services** typing tests, practicing from PDFs ensures you are comfortable with the formal tone and long sentences characteristic of professional documentation. Elevate your **typing speed** by simulating actual exam conditions directly from your own digital library. (Keyword: PDF Typing, Speed Drill, SSC Typing Exam, CPT Preparation).
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl border border-slate-800 feature-item" id="f3">
+                    <button onclick="toggleFeature('f3')" class="w-full p-8 text-left flex justify-between items-center group">
+                        <span class="text-xl md:text-2xl font-bold group-hover:text-indigo-400 transition">3. Hindi Unicode (Mangal) & Bilingual Support</span>
+                        <span class="text-2xl arrow">↓</span>
+                    </button>
+                    <div class="feature-content px-8 pb-8 text-slate-400 text-sm leading-relaxed">
+                        For aspirants in North India, **Hindi Typing** is a critical skill. VortexType fully supports the **Hindi Unicode (Mangal Font)**, which is mandatory for exams like UP Police, BSSC, and MPPEB. Our tool seamlessly handles both **Remington Gail and Inscript layouts**, providing a glitch-free experience for Devanagari script typing. The bilingual nature of our tool allows you to switch between Hindi and English modes instantly. When you upload a Hindi document, our OCR engine recognizes the characters and applies the correct spacing and formatting. Mastering the Hindi keyboard is notoriously difficult due to complex character combinations (Sanyukt Akshar), but our real-time feedback system makes the learning curve manageable. By providing a professional environment for "Hindi Typing Test Online," we help thousands of users achieve the necessary 30 WPM speed required for government job selection. (Keyword: Hindi Typing, Remington Gail, Mangal Font Typing, Unicode Hindi Test).
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl border border-slate-800 feature-item" id="f4">
+                    <button onclick="toggleFeature('f4')" class="w-full p-8 text-left flex justify-between items-center group">
+                        <span class="text-xl md:text-2xl font-bold group-hover:text-indigo-400 transition">4. Customizable Timer & Exam Simulation</span>
+                        <span class="text-2xl arrow">↓</span>
+                    </button>
+                    <div class="feature-content px-8 pb-8 text-slate-400 text-sm leading-relaxed">
+                        Every competitive exam has different time limits—ranging from 5-minute sprints to 15-minute marathons. VortexType features a **Customizable Timer**, allowing you to set the duration of your typing test according to your target exam. Whether you are practicing for a quick speed burst or building endurance for longer tests, you have full control. This flexibility is key to effective **Exam Simulation**. Additionally, our tool calculates your Net Speed (WPM) and Accuracy using the standard industry formulas, penalizing mistakes just like a real examiner would. The visual feedback—including the Red-glow error alert—trains your brain to avoid mistakes under time pressure. By setting a custom timer, you can track your progress over different intervals, identifying if your speed drops during longer sessions. Focus on your goals, set your time, and watch your speed soar. (Keyword: Customizable Typing Timer, Speed Test Simulator, SSC CHSL Typing, WPM Accuracy Tracker).
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ad-placeholder w-full max-w-4xl h-24 mx-auto mt-16 rounded-xl">Landing Bottom Banner Ad</div>
+        </div>
+    </section>
+
+    <main id="appPage" class="hidden-page min-h-screen flex flex-col p-4">
+        <div class="container mx-auto flex flex-col gap-4">
+            
+            <div class="ad-placeholder w-full h-20 rounded-2xl">Tools Page Top Banner Ad</div>
+
+            <div class="glass p-4 rounded-2xl flex flex-wrap justify-between items-center gap-6">
+                <div class="flex flex-wrap gap-2 items-center">
+                    <button onclick="document.getElementById('imgInput').click()" class="bg-indigo-600 px-4 py-2 rounded-xl text-[10px] font-bold">📷 IMAGE</button>
+                    <button onclick="document.getElementById('pdfInput').click()" class="bg-slate-700 px-4 py-2 rounded-xl text-[10px] font-bold">📄 PDF</button>
+                    <input type="file" id="imgInput" accept="image/*" class="hidden">
+                    <input type="file" id="pdfInput" accept="application/pdf" class="hidden">
+                    
+                    <select id="langSelect" onchange="updateLanguage()" class="bg-slate-800 text-[10px] py-2 px-2 rounded-xl border border-slate-700">
+                        <option value="eng">English</option>
+                        <option value="hin">Hindi (Unicode)</option>
+                    </select>
+
+                    <div class="flex items-center gap-1 bg-slate-800 px-2 py-1 rounded-xl border border-slate-700">
+                        <span class="text-[9px] text-slate-500 font-bold">MINS:</span>
+                        <input type="number" id="customTime" value="1" min="1" max="60" class="bg-transparent w-8 text-center text-xs outline-none text-indigo-400 font-bold">
+                    </div>
+                </div>
+
+                <div class="flex gap-6">
+                    <div class="text-center"><span class="block text-[9px] text-indigo-400 font-bold uppercase">WPM</span><span id="wpmDisplay" class="text-2xl font-bold mono">00</span></div>
+                    <div class="text-center"><span class="block text-[9px] text-emerald-400 font-bold uppercase">ACC</span><span id="accDisplay" class="text-2xl font-bold mono">0%</span></div>
+                    <div class="text-center"><span class="block text-[9px] text-amber-400 font-bold uppercase">TIME</span><span id="timerDisplay" class="text-2xl font-bold mono">01:00</span></div>
+                </div>
+
+                <div class="flex gap-2">
+                    <button onclick="cleanAndReset()" class="bg-amber-500/20 text-amber-500 px-3 py-2 rounded-xl text-[10px] font-bold border border-amber-500/40">🧹 CLEAN</button>
+                    <button onclick="location.reload()" class="bg-red-500/20 text-red-500 px-3 py-2 rounded-xl text-[10px] font-bold border border-red-500/40">❌ EXIT</button>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-4">
+                <div class="flex-grow flex flex-col gap-4">
+                    <div id="wordDisplay" class="glass p-8 rounded-3xl h-[300px] md:h-[400px] overflow-y-auto text-2xl leading-relaxed mono select-none"></div>
+                    <div class="relative">
+                        <div id="loader" class="hidden absolute -top-8 left-0 right-0 text-center text-indigo-400 font-bold text-xs animate-pulse">⚡ ANALYZING...</div>
+                        <input type="text" id="typingInput" class="w-full bg-slate-800 border-4 border-slate-700 focus:border-indigo-500 rounded-3xl p-6 text-2xl mono outline-none" placeholder="Start typing..." autocomplete="off">
+                    </div>
+                </div>
+                
+                <aside class="w-full lg:w-80 flex flex-col gap-4">
+                    <div class="ad-placeholder w-full h-full min-h-[300px] rounded-3xl">Sticky Sidebar Ad</div>
+                </aside>
+            </div>
+
+            <div class="ad-placeholder w-full h-24 rounded-2xl">Tools Page Footer Ad</div>
+        </div>
+    </main>
+
+    <div id="resultModal" class="fixed inset-0 z-[100] flex items-center justify-center hidden bg-black/95 backdrop-blur-xl p-4">
+        <div class="glass w-full max-sm rounded-[40px] p-8 border border-indigo-500/30 text-center">
+            <h2 class="text-2xl font-bold mb-6 text-indigo-400">Scorecard</h2>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+                <div class="bg-slate-800 p-4 rounded-2xl"><p class="text-slate-500 text-[10px] font-bold">SPEED</p><p id="resWpm" class="text-3xl font-bold">0</p><p class="text-[10px]">WPM</p></div>
+                <div class="bg-slate-800 p-4 rounded-2xl"><p class="text-slate-500 text-[10px] font-bold">ACCURACY</p><p id="resAcc" class="text-3xl font-bold text-emerald-400">0%</p></div>
+            </div>
+            <button onclick="location.reload()" class="w-full bg-indigo-600 py-4 rounded-2xl font-bold">Restart Test</button>
+        </div>
+    </div>
+
+    <script>
+        const samples = {
+            eng: "Success is not final, failure is not fatal: it is the courage to continue that counts. Typing fast requires focus, accuracy, and consistent practice every single day to master the keyboard layout effectively.",
+            hin: "सफलता अंतिम नहीं है, असफलता घातक नहीं है: जारी रखने का साहस ही मायने रखता है। टाइपिंग में महारत हासिल करने के लिए निरंतर अभ्यास और एकाग्रता की आवश्यकता होती है।"
+        };
+
+        let targetText = samples.eng;
+        let words = []; let currentWordIndex = 0; let mistakes = 0; 
+        let isStarted = false; let timeLeft = 60; let timerInterval;
+        let originalTime = 60;
+
+        function goToTool() {
+            document.getElementById('landingPage').classList.add('hidden-page');
+            document.getElementById('appPage').classList.remove('hidden-page');
+            updateLanguage();
+        }
+
+        async function shareWebsite() {
+            const shareData = {
+                title: 'VortexType',
+                text: 'Best Image & PDF Typing Tool for Exam Aspirants!',
+                url: window.location.href
+            };
+            if (navigator.share) {
+                try { await navigator.share(shareData); } catch (err) {}
+            } else {
+                try {
+                    await navigator.clipboard.writeText(window.location.href);
+                    alert("Link copied! Ready to share.");
+                } catch (err) {
+                    prompt("Copy link:", window.location.href);
+                }
+            }
+        }
+
+        function updateLanguage() {
+            const lang = document.getElementById('langSelect').value;
+            targetText = samples[lang];
+            cleanAndReset();
+        }
+
+        function toggleFeature(id) {
+            const el = document.getElementById(id);
+            const isActive = el.classList.contains('feature-active');
+            document.querySelectorAll('.feature-item').forEach(item => {
+                item.classList.remove('feature-active');
+                item.querySelector('.arrow').innerText = '↓';
+            });
+            if (!isActive) {
+                el.classList.add('feature-active');
+                el.querySelector('.arrow').innerText = '↑';
+            }
+        }
+
+        function cleanAndReset() {
+            clearInterval(timerInterval);
+            isStarted = false; currentWordIndex = 0; mistakes = 0;
+            const mins = parseInt(document.getElementById('customTime').value) || 1;
+            originalTime = mins * 60; timeLeft = originalTime;
+            document.getElementById('wpmDisplay').innerText = "00";
+            document.getElementById('accDisplay').innerText = "0%";
+            document.getElementById('timerDisplay').innerText = `${mins.toString().padStart(2, '0')}:00`;
+            document.getElementById('typingInput').value = "";
+            document.getElementById('typingInput').disabled = false;
+            renderWords();
+        }
+
+        function renderWords() {
+            words = targetText.split(/\s+/).filter(w => w.length > 0);
+            document.getElementById('wordDisplay').innerHTML = words.map((word, i) => `<span class="word" id="word-${i}">${word}</span>`).join('');
+            highlightCurrent();
+        }
+
+        function highlightCurrent() {
+            document.querySelectorAll('.word').forEach(el => el.classList.remove('current-word'));
+            const el = document.getElementById(`word-${currentWordIndex}`);
+            if(el) { el.classList.add('current-word'); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        }
+
+        document.getElementById('typingInput').addEventListener('input', () => {
+            if(!isStarted) startTimer();
+            const val = document.getElementById('typingInput').value;
+            const currentTarget = words[currentWordIndex];
+            if (!currentTarget.startsWith(val.trim())) document.getElementById('typingInput').classList.add('border-red-500');
+            else document.getElementById('typingInput').classList.remove('border-red-500');
+            if(val.endsWith(' ')) {
+                const el = document.getElementById(`word-${currentWordIndex}`);
+                if(val.trim() === currentTarget) el.classList.add('correct');
+                else { el.classList.add('wrong'); mistakes++; }
+                currentWordIndex++; document.getElementById('typingInput').value = '';
+                updateStats(); highlightCurrent();
+                if(currentWordIndex >= words.length) endTest();
+            }
+        });
+
+        function startTimer() {
+            isStarted = true;
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                const m = Math.floor(timeLeft / 60); const s = timeLeft % 60;
+                document.getElementById('timerDisplay').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+                updateStats(); if(timeLeft <= 0) endTest();
+            }, 1000);
+        }
+
+        function updateStats() {
+            const timePassed = (originalTime - timeLeft) / 60;
+            if(timePassed <= 0) return;
+            const wpm = Math.round(currentWordIndex / timePassed);
+            const acc = currentWordIndex === 0 ? 0 : Math.round(((currentWordIndex - mistakes) / currentWordIndex) * 100);
+            document.getElementById('wpmDisplay').innerText = wpm.toString().padStart(2, '0');
+            document.getElementById('accDisplay').innerText = acc + '%';
+        }
+
+        function endTest() {
+            clearInterval(timerInterval);
+            document.getElementById('typingInput').disabled = true;
+            document.getElementById('resWpm').innerText = document.getElementById('wpmDisplay').innerText;
+            document.getElementById('resAcc').innerText = document.getElementById('accDisplay').innerText;
+            document.getElementById('resultModal').classList.remove('hidden');
+        }
+
+        // Tesseract and PDF Logic
+        document.getElementById('imgInput').addEventListener('change', async (e) => {
+            const file = e.target.files[0]; if(!file) return;
+            document.getElementById('loader').classList.remove('hidden');
+            const res = await Tesseract.recognize(file, document.getElementById('langSelect').value);
+            targetText = res.data.text.replace(/\n/g, ' ').trim();
+            cleanAndReset(); document.getElementById('loader').classList.add('hidden');
+        });
+
+        document.getElementById('pdfInput').addEventListener('change', async (e) => {
+            const file = e.target.files[0]; if(!file) return;
+            document.getElementById('loader').classList.remove('hidden');
+            const reader = new FileReader();
+            reader.onload = async function() {
+                const pdf = await pdfjsLib.getDocument(new Uint8Array(this.result)).promise;
+                let text = '';
+                for(let i=1; i<=Math.min(pdf.numPages, 2); i++) {
+                    const page = await pdf.getPage(i);
+                    const content = await page.getTextContent();
+                    text += content.items.map(s => s.str).join(' ');
+                }
+                targetText = text.trim(); cleanAndReset();
+                document.getElementById('loader').classList.add('hidden');
+            };
+            reader.readAsArrayBuffer(file);
+        });
+    </script>
+</body>
+</html>
